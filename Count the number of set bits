@@ -1,0 +1,36 @@
+{ Own question }
+
+
+Brute force
+
+Time complexity : O(Log2N)
+Space complexity : O(1)
+
+int countSetBit(int N)
+{
+int count=0;
+while(N>1)
+{
+   if(N%2==1)
+     count++;
+
+   N=N/2;
+}
+return count;
+}
+
+Optimized 
+
+Time complexity :  O(no.of.set)
+Space complexity : O(1)
+
+ int countSetBit(int N)
+{
+    int count=0;
+    while(N)
+    {
+      N=N&(N-1);
+      count++;
+   }
+   return count;
+}
