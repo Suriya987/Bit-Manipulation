@@ -63,7 +63,7 @@ public:
 
 Optimised : 
 
-Time complexity : O(N)
+Time complexity : O(N) + O(N LogN)  -> for accessing Map DS
 Space complexity : O(N)
 
 class Solution {
@@ -94,4 +94,29 @@ public:
           }
           return res;
     }
+};
+
+Better :
+
+Time complexity : O(N)
+Space complexity : O(1)
+
+class Solution {
+public:
+    vector<int> countBits(int n) {
+         
+
+       
+         vector<int>res;
+         res.push_back(0);
+    
+          for(int i=1;i<=n;i++)
+          {
+             int val=res[i/2]+i%2;
+             res.push_back(val);
+  
+          }
+          return res;
+        
+      }
 };
